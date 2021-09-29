@@ -5,6 +5,11 @@
 /.pnp
 .pnp.js
 
+# devDependencies
+.eslintrc.json
+.babelrc
+.stylelintrc.json
+
 # testing
 /coverage
 

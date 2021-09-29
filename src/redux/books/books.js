@@ -7,6 +7,7 @@ const REMOVE = 'bookstore/books/REMOVE';
 
 export default function reducer(state = [], action) {
   let newBook;
+
   switch (action.type) {
     case (LOAD):
       return state;
@@ -29,23 +30,26 @@ export default function reducer(state = [], action) {
         return book;
       });
     case (REMOVE):
-      return state.filter((book) => book.id !== action.bookId);
+      return state.filter((book) => book.bookId !== action.bookId);
     default: return state;
   }
 }
 
-export function loadBooks() {
-  return { type: LOAD };
-}
+export const loadBooks = () => ({
+  type: LOAD,
+});
 
-export function createBook(book) {
-  return { type: CREATE, book };
-}
+export const addBook = (book) => ({
+  type: CREATE,
+  book,
+});
 
-export function updateBook(book) {
-  return { type: UPDATE, book };
-}
+export const updateBook = (book) => ({
+  type: UPDATE,
+  book,
+});
 
-export function removeBook(bookId) {
-  return { type: REMOVE, bookId };
-}
+export const removeBook = (bookId) => ({
+  type: REMOVE,
+  bookId,
+});
