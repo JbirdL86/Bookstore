@@ -6,7 +6,7 @@
 .pnp.js
 
 # devDependencies
-.eslint.json
+.eslintrc.json
 .babelrc
 .stylelintrc.json
 
