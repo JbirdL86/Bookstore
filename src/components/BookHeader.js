@@ -1,5 +1,8 @@
-import React from 'react';
+import React, { useState } from 'react';
 import PropTypes from 'prop-types';
+import { useDispatch } from 'react-redux';
+import { bindActionCreators } from 'redux';
+import { removeBook } from '../redux/books/books';
 
 const links = [
   {
@@ -17,13 +20,23 @@ const links = [
 ];
 
 const BookHeader = (props) => {
-  const { category, title, author } = props;
+  const { bookId, title, author } = props;
+  const dispatch = useDispatch();
+  const dispatchRemoveBook = bindActionCreators(removeBook, dispatch);
+
+  const [Id, setId] = useState(bookId);
+
+  const removeBookFromStore = (e) => {
+    e.preventDefault();
+    setId(e.target.id);
+    dispatchRemoveBook(Id);
+  };
 
   return (
     <>
       <div className="nav-bookheader">
         <div className="category">
-          {category}
+          <p>Category</p>
         </div>
         <div className="title">
           {title}
@@ -33,11 +46,15 @@ const BookHeader = (props) => {
         </div>
         <div className="links-list">
           <ul className="book-menu">
-            {links.map((link) => (
-              <li key={link.id}>
-                {link.text}
-              </li>
-            ))}
+            <li className="item-button">
+              <button type="button">{links[0].text}</button>
+            </li>
+            <li className="item-button">
+              <button id={bookId} type="button" onClick={removeBookFromStore}>{links[1].text}</button>
+            </li>
+            <li className="item-button">
+              <button type="button">{links[2].text}</button>
+            </li>
           </ul>
         </div>
       </div>
@@ -46,9 +63,9 @@ const BookHeader = (props) => {
 };
 
 BookHeader.propTypes = {
-  category: PropTypes.string.isRequired,
   title: PropTypes.string.isRequired,
   author: PropTypes.string.isRequired,
+  bookId: PropTypes.string.isRequired,
 };
 
 export default BookHeader;
