@@ -9,28 +9,28 @@ const AddBook = () => {
   const dispatchAddBook = bindActionCreators(addBook, dispatch);
 
   const [title, setTitle] = useState('');
-  const [author, setAuthor] = useState('');
+  const [category, setCategory] = useState('');
 
   const titleHandler = (e) => {
     setTitle(e.target.value);
   };
 
-  const authorHandler = (e) => {
-    setAuthor(e.target.value);
+  const categoryHandler = (e) => {
+    setCategory(e.target.value);
   };
 
   const submitBookToStore = (e) => {
     e.preventDefault();
 
     const newBook = {
-      bookId: uuidv4(),
+      item_id: uuidv4(),
       title,
-      author,
+      category,
     };
 
     dispatchAddBook(newBook);
     setTitle('');
-    setAuthor('');
+    setCategory('');
   };
 
   return (
@@ -39,7 +39,7 @@ const AddBook = () => {
         <h3>ADD NEW BOOK</h3>
         <form>
           <input type="text" placeholder="Title" value={title} onChange={titleHandler} />
-          <input type="text" placeholder="Author" onChange={authorHandler} value={author} />
+          <input type="text" placeholder="Category" onChange={categoryHandler} value={category} />
           <button type="submit" onClick={submitBookToStore}>ADD BOOK</button>
         </form>
       </div>
