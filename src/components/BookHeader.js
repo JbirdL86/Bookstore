@@ -3,6 +3,7 @@ import PropTypes from 'prop-types';
 import { useDispatch } from 'react-redux';
 import { bindActionCreators } from 'redux';
 import { removeBook } from '../redux/books/books';
+import '../pages/index.css';
 
 const links = [
   {
@@ -20,7 +21,7 @@ const links = [
 ];
 
 const BookHeader = (props) => {
-  const { bookId, title, author } = props;
+  const { bookId, title, category } = props;
   const dispatch = useDispatch();
   const dispatchRemoveBook = bindActionCreators(removeBook, dispatch);
 
@@ -35,14 +36,11 @@ const BookHeader = (props) => {
   return (
     <>
       <div className="nav-bookheader">
-        <div className="category">
-          <p>Category</p>
-        </div>
         <div className="title">
           {title}
         </div>
-        <div className="author">
-          {author}
+        <div className="category">
+          {category}
         </div>
         <div className="links-list">
           <ul className="book-menu">
@@ -64,7 +62,7 @@ const BookHeader = (props) => {
 
 BookHeader.propTypes = {
   title: PropTypes.string.isRequired,
-  author: PropTypes.string.isRequired,
+  category: PropTypes.string.isRequired,
   bookId: PropTypes.string.isRequired,
 };
 
