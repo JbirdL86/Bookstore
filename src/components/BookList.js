@@ -10,7 +10,7 @@ const BookList = () => {
   const dispatch = useDispatch();
   const loadAction = bindActionCreators(loadBooks, dispatch);
 
-  useEffect(() => { loadAction(); return null; }, [dispatch]);
+  useEffect(() => { loadAction(); }, []);
 
   return (
     <>
