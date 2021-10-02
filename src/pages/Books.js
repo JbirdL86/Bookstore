@@ -7,8 +7,9 @@ const Books = () => (
     <div className="container">
       <div className="inner-container">
         <BookList />
-        <AddBook />
       </div>
+      <div className="main-sep" />
+      <AddBook />
     </div>
   </>
 );
