@@ -3,7 +3,7 @@ import { FiCircle } from 'react-icons/fi';
 
 const BookStatus = () => {
   const completitionPercentage = '90%';
-  const currentChapter = '10';
+  const currentChapter = 'Chapter 10';
 
   return (
     <>
@@ -12,11 +12,14 @@ const BookStatus = () => {
           <div className="completition-circle">
             <FiCircle />
           </div>
-          <div className="completiotion-number">
-            {completitionPercentage}
+          <div className="completition-number">
+            <h3>{completitionPercentage}</h3>
+            <p>Completed</p>
           </div>
         </div>
+        <div className="completition-sep" />
         <div className="current-chapter">
+          <p>CURRENT CHAPTER</p>
           <div className="chapter">
             {currentChapter}
           </div>

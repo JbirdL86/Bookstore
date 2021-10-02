@@ -38,9 +38,9 @@ const AddBook = () => {
       <div className="add-book-container">
         <h3>ADD NEW BOOK</h3>
         <form>
-          <input type="text" placeholder="Title" value={title} onChange={titleHandler} />
-          <input type="text" placeholder="Category" onChange={categoryHandler} value={category} />
-          <button type="submit" onClick={submitBookToStore}>ADD BOOK</button>
+          <input className="title-input" type="text" placeholder="Title" value={title} onChange={titleHandler} />
+          <input className="category-input" type="text" placeholder="Category" onChange={categoryHandler} value={category} />
+          <button className="submit-input" type="submit" onClick={submitBookToStore}>ADD BOOK</button>
         </form>
       </div>
     </>

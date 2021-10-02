@@ -3,6 +3,8 @@
 
 ![screenshot](./bookstore.png)
 
+https://bookstorejl.herokuapp.com/
+
 ## Built With
 
 - Html, Javascript, CSS
@@ -10,6 +12,13 @@
 - React JS
 - Redux
 - Developed in VSCode
+
+
+## Link
+
+Get a live preview of the project on this link  
+
+- Link: [Live-Preview](https://bookstorejl.herokuapp.com/)
 
 ## Setup 
 ### clone repository

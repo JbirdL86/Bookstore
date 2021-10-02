@@ -36,20 +36,23 @@ const BookHeader = (props) => {
   return (
     <>
       <div className="nav-bookheader">
-        <div className="title">
-          {title}
-        </div>
         <div className="category">
           {category}
         </div>
+        <h4 className="title">
+          {title}
+        </h4>
+        <p className="author">Pablo Cohelo</p>
         <div className="links-list">
           <ul className="book-menu">
             <li className="item-button">
               <button type="button">{links[0].text}</button>
             </li>
+            <li className="button-sep" />
             <li className="item-button">
               <button id={bookId} type="button" onClick={removeBookFromStore}>{links[1].text}</button>
             </li>
+            <li className="button-sep" />
             <li className="item-button">
               <button type="button">{links[2].text}</button>
             </li>

@@ -12,7 +12,6 @@ const BookItem = (props) => {
         title={title}
         category={category}
       />
-      <p>{bookId}</p>
       <BookStatus />
     </li>
   );

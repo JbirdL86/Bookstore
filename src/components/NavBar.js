@@ -7,17 +7,17 @@ const links = [
   {
     id: 1,
     path: '/',
-    text: 'Books',
+    text: 'BOOKS',
   },
   {
     id: 2,
     path: '/categories',
-    text: 'Categories',
+    text: 'CATEGORIES',
   },
 ];
 
 const Navbar = () => (
-  <nav className="navBar-container">
+  <nav className="navbar-container">
     <div className="navbar-left">
       <Header />
       <ul className="menu">

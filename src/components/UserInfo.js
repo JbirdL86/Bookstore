@@ -4,7 +4,7 @@ import { FaRegUserCircle } from 'react-icons/fa';
 const UserInfo = () => (
   <>
     <div className="nav-logo-container">
-      <FaRegUserCircle style={{ color: 'blue', fontSize: '16px' }} />
+      <FaRegUserCircle style={{ color: 'blue', fontSize: '30px' }} />
     </div>
   </>
 );
