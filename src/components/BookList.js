@@ -1,4 +1,4 @@
-import { useEffect, React } from 'react';
+import { useEffect, React, useCallback } from 'react';
 import { useDispatch, useSelector } from 'react-redux';
 import { bindActionCreators } from 'redux';
 import { loadBooks } from '../redux/books/books';
@@ -9,8 +9,11 @@ const BookList = () => {
 
   const dispatch = useDispatch();
   const loadAction = bindActionCreators(loadBooks, dispatch);
+  const loadActionDepndecncy = useCallback(() => {
+    loadAction();
+  }, []);
 
-  useEffect(() => { loadAction(); }, []);
+  useEffect(() => { loadActionDepndecncy(); }, []);
 
   return (
     <>
