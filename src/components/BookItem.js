@@ -3,14 +3,14 @@ import BookHeader from './BookHeader';
 import BookStatus from './BookStatus';
 
 const BookItem = (props) => {
-  const { bookId, title, category } = props;
+  const { bookId, title, author } = props;
 
   return (
     <li className="book-item">
       <BookHeader
         bookId={bookId}
         title={title}
-        category={category}
+        author={author}
       />
       <p>{bookId}</p>
       <BookStatus />
@@ -20,7 +20,7 @@ const BookItem = (props) => {
 
 BookItem.propTypes = {
   title: PropTypes.string.isRequired,
-  category: PropTypes.string.isRequired,
+  author: PropTypes.string.isRequired,
   bookId: PropTypes.string.isRequired,
 };
 
